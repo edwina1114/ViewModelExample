@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Use Live Data -->
+    <data>
+        <variable
+            name="ViewModel"
+            type="com.example.viewmodelexample.MyViewModel" />
+    </data>
+    <!-- Use Live Data -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/TV_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:text="@{String.valueOf(ViewModel.counter)}" />
+
+        <Button
+            android:id="@+id/BTN_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add 1"
+            android:onClick="@{()->ViewModel.add()}"/>
+
+        <Button
+            android:id="@+id/BTN_reset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:onClick="@{()->ViewModel.reset()}"/>
+    </LinearLayout>
+
+</layout>
